@@ -6,8 +6,25 @@
         <h1>Js Es 2</h1>
         <h2>Static HTML page: ex1 but with JQuery</h2>
         
-        <div>Don't press the button!</div>
-        <button>CLICK ME</button>
+        <div id="div1"></div>
+        <button id="btn1">CLICK ME</button>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        <script>
+            // document.getElementById("div1").innerHTML="hello";
+            $("#div1").html("Don't press the button!");
+            var red = true;
+            $("#btn1").click(function() {
+                if(red){
+                    $("#div1").attr("style", "background-color:rgb(69,420,69)");
+                    $("#div1").html("I said don't press the button!");
+                    red = false;
+                }else{
+                    $("#div1").html("Don't press the button!");
+                    $("#div1").attr("style", "background-color:default");
+                    red = true;
+                }
+                 
+            });
+        </script>
     </body>
 </html>
